@@ -26,14 +26,11 @@ SVG.Text = SVG.invent({
     }
     // Move over y-axis
   , y: function(y) {
-      var oy = this.attr('y')
-        , o  = typeof oy === 'number' ? oy - this.bbox().y : 0
-
-      // act as getter
+	  // act as getter
       if (y == null)
-        return typeof oy === 'number' ? oy - o : oy
+	    return this.attr('x')
 
-      return this.attr('y', typeof y.valueOf() === 'number' ? y + o : y)
+	  return this.attr('y', y)
     }
     // Move center over x-axis
   , cx: function(x) {

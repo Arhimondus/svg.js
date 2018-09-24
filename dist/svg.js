@@ -6,7 +6,7 @@
 * @copyright Wout Fierens <wout@mick-wout.com>
 * @license MIT
 *
-* BUILT: Thu Aug 30 2018 11:37:58 GMT+0200 (GMT+02:00)
+* BUILT: Mon Sep 24 2018 15:48:40 GMT+0300 (RTZ 2 (зима))
 */;
 (function(root, factory) {
   /* istanbul ignore next */
@@ -4590,14 +4590,11 @@ SVG.Text = SVG.invent({
     }
     // Move over y-axis
   , y: function(y) {
-      var oy = this.attr('y')
-        , o  = typeof oy === 'number' ? oy - this.bbox().y : 0
-
-      // act as getter
+	  // act as getter
       if (y == null)
-        return typeof oy === 'number' ? oy - o : oy
+	    return this.attr('x')
 
-      return this.attr('y', typeof y.valueOf() === 'number' ? y + o : y)
+	  return this.attr('y', y)
     }
     // Move center over x-axis
   , cx: function(x) {
@@ -5599,4 +5596,4 @@ if (typeof window.CustomEvent !== 'function') {
 
 return SVG
 
-}));
+}));
